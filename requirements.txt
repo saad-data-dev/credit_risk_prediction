@@ -1,0 +1,43 @@
+📋 Requirements
+
+To run the Credit Card Default Prediction project, you need the following software and Python libraries:
+
+1. Python
+
+Version: 3.8+
+
+2. Core Libraries
+
+pandas — data manipulation and cleaning
+
+numpy — numerical operations
+
+matplotlib — basic plotting
+
+seaborn — statistical data visualization
+
+scikit-learn — machine learning algorithms, preprocessing, and evaluation
+
+3. Optional / Recommended
+
+jupyter — for running notebooks interactively
+
+imbalanced-learn — for handling class imbalance (e.g., SMOTE)
+
+xgboost / lightgbm — for advanced boosting models (if extending project)
+
+4. Dataset
+
+File: default of credit card clients.csv
+
+Format: CSV (; separator)
+
+Required columns: financial data, demographics, payment history, target variable default payment next month
+
+5. System Requirements
+
+Memory: ≥ 8 GB RAM recommended for large datasets
+
+Disk space: ≥ 200 MB (for dataset and generated outputs)
+
+Environment: Can be run locally or on cloud-based Python environments (Google Colab, Kaggle Notebooks)
