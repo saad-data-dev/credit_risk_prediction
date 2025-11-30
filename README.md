@@ -54,5 +54,116 @@ To run this project, you need:
 Install dependencies with:
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn joblib st
+pip install pandas numpy matplotlib seaborn scikit-learn joblib streamlit
+# optionally
+pip install imbalanced-learn xgboost lightgbm jupyter
 ```
+
+---
+
+## 🚀 Workflow / Project Steps
+
+1. **Import required libraries**
+2. **Load dataset** — read CSV and preview data
+3. **Data cleaning & preprocessing**
+
+   * Remove duplicate headers or incorrect rows
+   * Rename columns
+   * Convert values to numeric and handle missing/invalid values
+   * Clip out-of-range values (ages, payment history, amounts)
+   * Drop irrelevant columns (e.g., `ID`)
+   * Remove duplicates
+4. **Exploratory Data Analysis (EDA)**
+
+   * Statistical summary, distribution plots, correlation heatmap
+   * Analyze target variable distribution
+5. **Feature engineering & data preparation**
+
+   * Separate features (`X`) and target (`y`)
+   * Train/test split with stratification
+   * Scale numerical features
+   * Optionally engineer new features (interactions, aggregated scores, consistency)
+6. **Model training**
+
+   * Baseline model: Logistic Regression
+   * Optional advanced models: Random Forest, XGBoost, LightGBM
+7. **Evaluation**
+
+   * Compute metrics: accuracy, precision, recall, F1-score, confusion matrix
+   * Focus on recall/F1 for default class
+8. **Interpretation & insights**
+
+   * Analyze model strengths/weaknesses
+   * Identify key features and business implications
+9. **Reporting & documentation**
+
+   * Save cleaned data
+   * Document findings and limitations in Markdown reports
+10. **Interactive application (Streamlit)**
+
+    * Input client data
+    * Predict default risk in real-time
+    * Display results through a simple interface
+
+---
+
+## 🖥️ Interactive Application (Streamlit)
+
+* **Location:** `api/app.py`
+* **Functionality:**
+
+  * Enter client features (age, income, payment history, etc.)
+  * Click **Predict** to see predicted credit default risk immediately
+* **Usage:**
+
+```bash
+# Make sure you are in the project directory
+python -m streamlit run api/app.py
+```
+
+* **Requirement:** The trained model file `credit_model.pkl` must be in the same folder as `app.py`.
+
+---
+
+## 📊 Expected Outcomes
+
+* Cleaned dataset ready for analysis
+* EDA results including distributions, correlations, and target imbalance checks
+* Modeling results with evaluation metrics and confusion matrices
+* Detailed Markdown reports summarizing findings and recommendations
+* Interactive testing of predictions via Streamlit
+
+---
+
+## ⚠️ Limitations & Considerations
+
+* Dataset is **imbalanced**, biasing models toward majority class
+* Baseline model may have **low recall for default class**, risking missed high-risk clients
+* Financial and regulatory constraints require careful interpretation before deployment
+* Streamlit app is a **proof-of-concept**, not production-ready
+
+---
+
+## 🔭 Future Work
+
+* Implement resampling or class-weight strategies to address class imbalance
+* Train advanced models with hyperparameter tuning
+* Engineer additional features (payment trends, ratios, aggregated scores)
+* Add explainable AI techniques (SHAP, feature importance)
+* Extend dataset for validation and robustness
+* Improve Streamlit app: add more client features, better UI, input validation
+
+---
+
+## 📄 Author & Contact
+
+**Saad EL FATINE** — Data Analyst / Data Scientist
+📩 Email: [e.saad@etudiant.edcparis.edu](mailto:e.saad@etudiant.edcparis.edu)
+🔗 GitHub: [https://github.com/saad-data-dev](https://github.com/saad-data-dev)
+🔗 LinkedIn: [https://www.linkedin.com/in/saad-el-fatine](https://www.linkedin.com/in/saad-el-fatine)
+
+---
+
+## 🔗 References
+
+* UCI Dataset: Default of Credit Card Clients ([link](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients))
